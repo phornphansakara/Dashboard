@@ -1,50 +1,67 @@
-import { NavItem } from '@/types';
+import { AppNavItem } from "@/types";
+
+export const authUser = {
+  username: "admin",
+  password: "admin",
+};
 
 //Info: The following data is used for the sidebar navigation and Cmd K bar.
-export const navItems: NavItem[] = [
+export const appNavItems: AppNavItem[] = [
   {
-    title: 'Dashboard',
-    url: '/dashboard/overview',
-    icon: 'dashboard',
-    isActive: false,
-    shortcut: ['d', 'd'],
-    items: [] // Empty array as there are no child items for Dashboard
-  },
-  {
-    title: 'Product',
-    url: '/dashboard/product',
-    icon: 'product',
-    shortcut: ['p', 'p'],
-    isActive: false,
-    items: [] // No child items
-  },
-  {
-    title: 'Account',
-    url: '#', // Placeholder as there is no direct link for the parent
-    icon: 'billing',
-    isActive: true,
-
-    items: [
+    section: "Dashboard",
+    navItems: [
       {
-        title: 'Profile',
-        url: '/dashboard/profile',
-        icon: 'userPen',
-        shortcut: ['m', 'm']
+        title: "Dashboard",
+        url: "/dashboard/overview",
+        icon: "dashboard",
+        isActive: true,
+        shortcut: ["d", "d"],
+        items: [], // Empty array as there are no child items for Dashboard
       },
-      {
-        title: 'Login',
-        shortcut: ['l', 'l'],
-        url: '/',
-        icon: 'login'
-      }
-    ]
+    ],
   },
   {
-    title: 'Kanban',
-    url: '/dashboard/kanban',
-    icon: 'kanban',
-    shortcut: ['k', 'k'],
-    isActive: false,
-    items: [] // No child items
-  }
+    section: "Reporting",
+    navItems: [
+      {
+        title: "Transaction Report",
+        url: "#", // Placeholder as there is no direct link for the parent
+        icon: "dashboard",
+        isActive: true,
+        items: [],
+      },
+    ],
+  },
+  {
+    section: "Settings",
+    navItems: [
+      {
+        title: "System Setup",
+        url: "#", // Placeholder as there is no direct link for the parent
+        icon: "alpha",
+        isActive: true,
+
+        items: [
+          {
+            title: "Permission",
+            url: "/dashboard/permission",
+            icon: "userPen",
+            shortcut: ["p", "p"],
+          },
+          {
+            title: "Role",
+            shortcut: ["r", "r"],
+            url: "/dashboard/role",
+            icon: "user2",
+          },
+          {
+            title: "User",
+            shortcut: ["u", "u"],
+            url: "/dashboard/user",
+            icon: "user",
+          },
+        ],
+      },
+    ],
+  },
 ];

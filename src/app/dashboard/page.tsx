@@ -1,5 +1,12 @@
+import { redirect } from "next/navigation";
+
 export default function Page(){
-    return(
-        <h2 className="text-center text-2xl">Dashboard</h2>
-    )
+    
+    const isLoggedIn = true;
+
+    if (isLoggedIn){
+        redirect("/dashboard/overview")
+    }else{
+        redirect("/auth/login")
+    }
 }
